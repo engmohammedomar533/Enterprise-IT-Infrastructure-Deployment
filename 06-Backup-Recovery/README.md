@@ -291,6 +291,41 @@ Backups should be reviewed regularly to confirm:
 
 ---
 
+## Real-World Backup Troubleshooting
+
+During implementation, backup failures related to system volumes and recovery partitions were identified and investigated.
+
+### Activities Performed
+
+- Reviewed Windows Server Backup logs and event logs.
+- Identified system-reserved and recovery partitions required for backup consistency.
+- Investigated backup failures related to protected system volumes.
+- Verified inclusion of EFI and recovery partitions in the backup configuration.
+- Validated System State Backup functionality.
+- Verified Bare Metal Recovery support.
+- Tested backup execution and monitored completion status.
+- Confirmed successful backup creation after configuration adjustments.
+
+### Challenges Encountered
+
+- Backup jobs initially failed due to missing system-related volumes.
+- Recovery partitions required verification and inclusion in the backup process.
+- Full Server Backup configuration required validation to ensure disaster recovery readiness.
+
+### Outcome
+
+- Full Server Backup successfully configured.
+- System State protection verified.
+- Bare Metal Recovery capability confirmed.
+- Backup strategy documented and operational.
+- Recovery procedures established for future incidents.
+
+### Key Takeaway
+
+Successful backups are only one part of a disaster recovery strategy. Verification, testing, and recovery planning are equally important to ensure business continuity.
+
+---
+
 # Future Enhancements
 
 ## Planned
@@ -300,6 +335,8 @@ Backups should be reviewed regularly to confirm:
 - Backup Monitoring Dashboard
 - Offsite Backup Replication
 - Cloud Backup Integration
+- Recovery Testing Schedule
+- Backup Reporting Automation
 
 ---
 
@@ -313,3 +350,18 @@ Backups should be reviewed regularly to confirm:
 - Dynamic Disks
 - Shadow Copies
 - NTFS File System
+
+---
+
+# Project Outcome
+
+The implemented backup and disaster recovery solution provides multiple layers of protection against:
+
+- Hardware Failure
+- Accidental Deletion
+- File Corruption
+- Operating System Failure
+- Active Directory Failure
+- Complete Server Loss
+
+The environment now benefits from a structured and documented recovery strategy designed to minimize downtime and protect business-critical services.
