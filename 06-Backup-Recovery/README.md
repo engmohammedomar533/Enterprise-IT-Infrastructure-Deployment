@@ -1,5 +1,84 @@
 # Backup and Disaster Recovery
+# Disaster Recovery Strategy
 
+The environment utilizes a layered recovery model designed to minimize downtime, protect critical services, and ensure business continuity.
+
+---
+
+## Layer 0 - Power Protection
+
+### Configuration
+
+- APC Easy UPS On-Line SRVS 3000VA
+- Schneider Electric
+- Double Conversion Online Technology
+- 230V Output
+
+### Purpose
+
+Protect infrastructure from:
+
+- Power Outages
+- Voltage Fluctuations
+- Brownouts
+- Power Surges
+- Electrical Noise
+
+### Protected Equipment
+
+- Windows Server 2025
+- Network Switch Infrastructure
+- Router Infrastructure
+- BioTime Attendance System
+- Core Network Services
+
+### Benefits
+
+- Zero Transfer Time
+- Continuous Power Delivery
+- Reduced Service Interruptions
+- Improved Equipment Protection
+- Reduced Data Corruption Risk
+
+### Important Note
+
+Power protection represents the first line of defense in the disaster recovery strategy.
+
+Preventing outages is always preferable to recovering from them.
+
+---
+
+## Layer 1 - RAID 1 Storage Protection
+
+### Configuration
+
+- 2 × 8TB Enterprise Drives
+- Windows Dynamic Disk Mirroring
+- RAID 1
+
+### Purpose
+
+Protect against:
+
+- Single disk failure
+- Hardware storage failure
+
+### Benefits
+
+- High availability
+- Immediate redundancy
+- No interruption during single disk failure
+
+### Important Note
+
+RAID is not a backup solution.
+
+RAID protects availability but does not protect against:
+
+- Accidental deletion
+- Malware
+- Ransomware
+- Data corruption
 ## Overview
 
 A multi-layered backup and disaster recovery strategy was designed and implemented to protect business-critical systems, engineering documents, Active Directory services, and company data.
