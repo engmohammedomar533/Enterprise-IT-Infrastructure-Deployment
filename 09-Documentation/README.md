@@ -1,35 +1,29 @@
-# Project Documentation and Executive Summary
-
-## Project Overview
-
-This project documents the design, deployment, and administration of a complete enterprise IT infrastructure for a multi-department engineering office.
-
-The environment was designed to provide centralized authentication, secure file storage, network segmentation, printer management, attendance automation, backup and disaster recovery, and centralized administration.
-
-The project demonstrates real-world systems administration, infrastructure deployment, troubleshooting, security implementation, and operational planning.
+# Enterprise IT Infrastructure Deployment
+## Project Documentation and Executive Summary
 
 ---
 
-# Business Requirements
+# Project Overview
 
-The organization required a centralized IT infrastructure capable of supporting:
+This project documents the design, deployment, configuration, administration, and documentation of a complete enterprise IT infrastructure for a multi-department engineering office.
 
-- 21 Workstations
-- Multiple Engineering Departments
-- Human Resources
-- Management Staff
-- Centralized File Storage
-- Centralized User Management
-- Secure Resource Access
-- Attendance Management
-- Backup and Recovery
-- Future Growth
+The environment was designed to provide centralized authentication, secure file management, printer deployment, network segmentation, attendance automation, backup and disaster recovery, and operational scalability.
 
-The objective was to move away from unmanaged workstation administration and establish a scalable and maintainable infrastructure platform.
+The project demonstrates practical experience in:
+
+- Infrastructure Design
+- Systems Administration
+- Active Directory Administration
+- Network Administration
+- Security Implementation
+- Backup and Disaster Recovery
+- Technical Troubleshooting
+- Business System Integration
+- Documentation and Operational Planning
 
 ---
 
-# Infrastructure Scope
+# Project Scope
 
 The project included deployment and configuration of:
 
@@ -42,15 +36,37 @@ The project included deployment and configuration of:
 - Print Services
 - Windows Server Backup
 
+---
+
 ## Network Infrastructure
 
 - TP-Link ER605 Router
 - TP-Link SG2218P Managed Switch
-- TP-Link EAP620 HD Access Points
+- 3 × TP-Link EAP620 HD Access Points
 - VLAN Segmentation
 - Guest Network Isolation
+- Omada SDN Management
 
-## Attendance Management
+---
+
+## Power Protection Infrastructure
+
+- APC Easy UPS On-Line SRVS 3000VA
+- Schneider Electric Double Conversion Technology
+- Critical Infrastructure Protection
+- Business Continuity Support
+
+Protected Systems:
+
+- Windows Server
+- Network Switch
+- Router
+- BioTime Attendance System
+- Core Network Services
+
+---
+
+## Attendance Infrastructure
 
 - ZKTeco BioTime
 - ZKTeco MB5000
@@ -60,171 +76,299 @@ The project included deployment and configuration of:
 
 ---
 
-# Infrastructure Design
+# Business Requirements
 
-## Centralized Authentication
+The organization required a centralized infrastructure capable of supporting:
 
-Active Directory was implemented to provide:
+- 21 Domain Workstations
+- Engineering Departments
+- Human Resources
+- Management Team
+- Centralized Authentication
+- Centralized File Storage
+- Attendance Management
+- Printer Management
+- Backup and Recovery
+- Secure Department Collaboration
+- Future Growth
+
+---
+
+# Infrastructure Architecture
+
+## Active Directory
+
+Active Directory was implemented as the central identity platform.
+
+Responsibilities:
 
 - User Authentication
 - Computer Authentication
 - Group Policy Management
-- Security Administration
+- Security Group Administration
+- Resource Access Management
 
-Benefits achieved:
+Benefits:
 
-- Centralized User Management
-- Consistent Security Policies
-- Simplified Administration
+- Centralized Administration
+- Consistent Security Controls
+- Simplified User Management
 
 ---
 
-## Centralized File Services
+## File Services
 
-A centralized file server was implemented to provide:
+Centralized file storage was implemented using Windows Server.
 
-- Department-Based Storage
-- Shared Resources
-- Secure Access Control
-- Data Protection
+Shared Resources:
 
-Benefits achieved:
+- InProgress
+- Final
+- Managerial
+- Scans
+- OsosDocs
+
+Features:
+
+- Department-Based Permissions
+- NTFS Security
+- Security Group Access
+- Shadow Copies
+- Centralized Backup
+
+Benefits:
 
 - Improved Collaboration
-- Reduced Data Duplication
-- Easier Administration
+- Improved Security
+- Simplified Management
 
 ---
 
-## Network Segmentation
+## Print Services
 
-The network was segmented into dedicated VLANs.
+Centralized print services were deployed using:
 
-### VLAN 10
+- Canon imageRUNNER 4056i
+- Windows Print Services
+- Group Policy Deployment
 
-Corporate Network
+Benefits:
 
-Used for:
+- Automated Printer Installation
+- Centralized Driver Management
+- Simplified Support
 
-- Workstations
-- Servers
+---
+
+# Network Design
+
+## VLAN 10 - Corporate Network
+
+Used For:
+
+- Domain Workstations
+- Windows Server
 - Printers
-- Attendance Devices
-- Infrastructure Components
+- Attendance Systems
+- Infrastructure Devices
 
-### VLAN 20
+---
 
-Guest Network
+## VLAN 20 - Guest Network
 
-Used for:
+Used For:
 
 - Mobile Devices
 - Visitors
-- Personal Equipment
-
-Benefits achieved:
-
-- Improved Security
-- Reduced Attack Surface
-- Better Resource Isolation
+- Guest Wi-Fi
+- Personal Devices
 
 ---
 
-# Security Design
+## Security Controls
 
-The environment follows a layered security model.
+Implemented:
 
-Implemented controls include:
+- Inter-VLAN Isolation
+- Guest Network Isolation
+- Centralized Management
+- Controlled Resource Access
+
+Benefits:
+
+- Reduced Attack Surface
+- Improved Security
+- Better Network Segmentation
+
+---
+
+# Security Architecture
+
+Implemented Controls:
 
 - Active Directory Authentication
 - Security Groups
 - NTFS Permissions
 - VLAN Segmentation
-- Guest Network Isolation
 - Windows Defender
-- Centralized Administration
+- Administrative Access Control
 - Backup Protection
+- Attendance System Access Control
 
-Future controls include:
+Planned Controls:
 
 - Windows LAPS
 - Software Restriction Policies
-- USB Device Control
+- USB Control
 - Security Auditing
+- Application Whitelisting
+
+---
+
+# Power Protection Strategy
+
+Power protection was implemented using:
+
+## APC Easy UPS On-Line SRVS 3000VA
+
+Benefits:
+
+- Zero Transfer Time
+- Voltage Regulation
+- Surge Protection
+- Brownout Protection
+- Equipment Protection
+- Improved Service Availability
+
+Protected Systems:
+
+- Server Infrastructure
+- Network Infrastructure
+- Attendance Systems
+
+Business Impact:
+
+- Reduced Downtime
+- Improved Reliability
+- Reduced Corruption Risk
 
 ---
 
 # Data Protection Strategy
 
-A multi-layer protection model was implemented.
+The environment utilizes a multi-layer disaster recovery model.
+
+## Layer 0
+
+Power Protection
+
+- APC Easy UPS On-Line SRVS 3000VA
+
+---
 
 ## Layer 1
 
-RAID 1 Storage Protection
+Storage Protection
+
+- RAID 1 Mirroring
+- 2 × 8TB Enterprise Drives
+
+---
 
 ## Layer 2
 
 Shadow Copies
 
+Purpose:
+
+- Previous Version Recovery
+- Accidental Deletion Recovery
+- Rapid File Restoration
+
+---
+
 ## Layer 3
 
 Windows Server Backup
+
+Protected Components:
+
+- Operating System
+- Active Directory
+- DNS
+- File Services
+- Print Services
+- System State
+
+---
 
 ## Layer 4
 
 Bare Metal Recovery
 
-Benefits achieved:
+Recovery Scope:
 
-- Reduced Downtime
-- Improved Recovery Capability
-- Business Continuity
+- Complete Server Recovery
+- Active Directory Recovery
+- File Server Recovery
+- DNS Recovery
+- Infrastructure Recovery
 
 ---
 
 # Attendance Management Design
 
-The attendance platform was designed to align with business requirements.
+## Platform
+
+- BioTime
+- MB5000
+
+---
+
+## Authentication Methods
+
+- Fingerprint
+- Facial Recognition
+
+---
 
 ## Attendance Model
 
 Flexible Working Hours
 
-### Configuration
+Configuration:
 
-- Friday and Saturday Weekends
+- Friday and Saturday Weekend
 - 8 Hour Daily Requirement
 - First and Last Pairing Rule
-- Monthly Evaluation
+- Monthly Attendance Evaluation
 - Overtime Disabled
 
-Benefits achieved:
+Benefits:
 
-- Flexible Employee Scheduling
-- Simplified Attendance Management
+- Flexible Scheduling
+- Simplified Administration
 - Accurate Reporting
 
 ---
 
 # Technical Challenges
 
-During deployment, several challenges were encountered and resolved.
-
 ## Printer Driver Deployment
 
 Challenge:
 
-Incorrect printer drivers remained deployed through Group Policy.
+Incorrect Canon printer drivers remained deployed through Group Policy.
 
 Resolution:
 
 - Driver Cleanup
-- Policy Review
+- Deployment Review
 - Printer Redeployment
 
 Outcome:
 
-Consistent printer deployment across workstations.
+Consistent deployment across all workstations.
 
 ---
 
@@ -232,99 +376,92 @@ Consistent printer deployment across workstations.
 
 Challenge:
 
-Backup failures occurred due to system volume and recovery partition requirements.
+Backup failures related to system partitions and recovery volumes.
 
 Resolution:
 
 - Log Analysis
-- Volume Validation
+- Volume Verification
 - Backup Configuration Review
-- Recovery Testing
+- Recovery Validation
 
 Outcome:
 
-Reliable full server backup and recovery capability.
+Reliable backup and recovery capability established.
 
 ---
 
-## Attendance Policy Development
+## Attendance System Design
 
 Challenge:
 
-The business required a flexible attendance model rather than a traditional fixed schedule.
+Business requirements required flexible attendance rather than traditional fixed schedules.
 
 Resolution:
 
 - Shift Design
-- Attendance Rule Configuration
+- Attendance Rule Development
 - Department Assignment
-- Testing and Validation
+- Validation Testing
 
 Outcome:
 
-Successful implementation of a flexible attendance system.
+Flexible attendance successfully implemented.
 
 ---
 
 # Lessons Learned
 
-## Infrastructure Design
+## Infrastructure
 
-- Planning reduces implementation complexity.
-- Standardization improves long-term maintainability.
-- Documentation is critical for support and recovery.
+- Proper planning reduces deployment complexity.
+- Documentation improves long-term maintainability.
+- Standardization simplifies administration.
 
 ## Security
 
-- Security should be incorporated during design, not after deployment.
+- Security should be integrated from the beginning.
 - Group-based permissions scale better than user-based permissions.
 - Network segmentation significantly improves security posture.
 
 ## Operations
 
 - Backup validation is as important as backup creation.
-- Monitoring reduces operational risk.
-- Change management improves stability.
+- Monitoring improves operational reliability.
+- Controlled change management reduces risk.
 
 ---
 
-# Project Results
+# Current Status
 
-The project successfully delivered:
+Production Environment Operational
 
-- Centralized Authentication
-- Centralized Administration
-- Centralized File Storage
-- Automated Printer Deployment
-- Biometric Attendance Management
-- Backup and Recovery Protection
-- VLAN-Based Network Segmentation
-- Department-Based Access Control
+Completed:
 
-The infrastructure is operational and supports daily business activities while providing a foundation for future growth.
+- Active Directory
+- DNS
+- File Services
+- Print Services
+- Group Policy
+- Omada SDN
+- VLAN Segmentation
+- RAID Storage
+- Shadow Copies
+- Windows Server Backup
+- Bare Metal Recovery
+- BioTime Deployment
+- MB5000 Integration
+- Department Structure
+- Attendance Policies
+- Power Protection Infrastructure
 
----
-
-# Future Roadmap
-
-## Infrastructure
-
-- Monitoring and Alerting
-- UPS Monitoring Integration
-- VPN Services
-
-## Security
+Planned:
 
 - Windows LAPS
 - Software Restriction Policies
-- USB Control
+- USB Device Controls
 - Security Auditing
-
-## Operations
-
-- Automated Reporting
-- Backup Monitoring
-- Attendance Analytics
+- Monitoring and Alerting
 
 ---
 
@@ -339,26 +476,33 @@ The infrastructure is operational and supports daily business activities while p
 - Shadow Copies
 - RAID 1
 - Omada SDN
-- VLAN Segmentation
-- Canon Print Services
+- ER605
+- SG2218P
+- EAP620 HD
+- Canon imageRUNNER 4056i
 - ZKTeco BioTime
 - ZKTeco MB5000
+- APC Easy UPS On-Line SRVS 3000VA
 
 ---
 
-# About This Project
+# Project Outcome
 
-This project represents a real-world infrastructure deployment designed, implemented, documented, and administered as part of a production engineering office environment.
+The project successfully delivered a production-ready enterprise infrastructure supporting 21 workstations across multiple departments.
 
-The project demonstrates practical experience in:
+The environment provides:
 
-- Systems Administration
-- Infrastructure Deployment
-- Network Administration
-- Security Implementation
-- Backup and Disaster Recovery
-- Technical Troubleshooting
-- Documentation and Operational Planning
+- Centralized Authentication
+- Centralized Administration
+- Secure File Storage
+- Automated Printer Deployment
+- Attendance Automation
+- Network Segmentation
+- Disaster Recovery Protection
+- Power Protection
+- Scalable Infrastructure Design
+
+The solution provides a solid operational foundation while maintaining a roadmap for future security and operational enhancements.
 
 ---
 
