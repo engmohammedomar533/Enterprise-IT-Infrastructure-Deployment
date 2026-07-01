@@ -37,6 +37,15 @@ This project demonstrates the implementation of a production-ready Windows Serve
 - Security Groups
 - Department-Based Access Control
 - Group Policy Management
+- Enterprise NTFS File Auditing
+- Advanced Audit Policy Configuration
+- Security Event Monitoring
+- File Modification Tracking
+- File Deletion Tracking
+- File Rename Tracking
+- File Move Tracking
+- Permission Change Auditing
+- Security Event Investigation Procedures
 
 ### Attendance System
 
