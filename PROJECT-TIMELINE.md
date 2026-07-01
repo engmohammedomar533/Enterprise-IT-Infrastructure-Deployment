@@ -33,22 +33,4 @@ Security Hardening
 
 Phase 12
 UPS Deployment
-## July 2026
 
-### Windows File Auditing
-
-Implemented enterprise-grade Windows File Auditing.
-
-Activities included:
-
-- Creating a dedicated Group Policy Object.
-- Linking the policy to the Domain Controllers OU.
-- Enabling Advanced Audit Policies.
-- Configuring NTFS Auditing.
-- Verifying audit policy using AuditPol.
-- Testing Security Event generation.
-- Documenting the complete implementation process.
-
-Outcome:
-
-The production file server now maintains an audit trail for all critical file operations performed by domain users.
